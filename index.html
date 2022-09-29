@@ -7,7 +7,65 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="mb-1">
+      <vrms-info-panel
+        title="InfoPanel (default)"
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      >
+      </vrms-info-panel>
+    </div>
+
+    <div class="mb-1">
+      <vrms-info-panel
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        title="InfoPanel (info + icon disabled)"
+        type="info"
+        icon-disabled
+      >
+      </vrms-info-panel>
+    </div>
+
+    <div class="mb-1">
+      <vrms-info-panel
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        title="InfoPanel (info)"
+        type="info"
+      >
+      </vrms-info-panel>
+    </div>
+
+    <div class="mb-1">
+      <vrms-info-panel
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        title="InfoPanel (warning)"
+        type="warning"
+      >
+      </vrms-info-panel>
+    </div>
+
+    <div class="mb-1">
+      <vrms-info-panel
+        description="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        title="InfoPanel (error)"
+        type="error"
+      >
+      </vrms-info-panel>
+    </div>
+
+    <div class="mb-1" id="info-panel-target"></div>
+
     <script type="module" src="/src/main.ts"></script>
+
+    <script>
+      const newPanel = document.createElement("vrms-info-panel");
+      newPanel.type = 'warning';
+      newPanel.iconDisabled = true;
+      newPanel.title = "InfoPanel (from vanilla JS)";
+      newPanel.description =
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit.";
+
+      const panelContainer = document.querySelector('#info-panel-target');
+      panelContainer.appendChild(newPanel);
+    </script>
   </body>
 </html>

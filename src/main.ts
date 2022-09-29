@@ -1,6 +1,6 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import { defineCustomElement } from "vue";
+import InfoPanel from "./components/InfoPanel.ce.vue";
+import "./styles/main.scss";
 
-import "./assets/main.css";
-
-createApp(App).mount("#app");
+const InfoPanelElement = defineCustomElement(InfoPanel);
+customElements.define("vrms-info-panel", InfoPanelElement);
